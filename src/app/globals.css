@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  :root {
+    --background: 140 26% 7%;
+    --foreground: 143 21% 93%;
+    --card: 148 25% 9%;
+    --card-foreground: 143 21% 93%;
+    --popover: 140 26% 7%;
+    --popover-foreground: 143 21% 93%;
+    --primary: 144 33% 46%;
+    --primary-foreground: 140 26% 7%;
+    --secondary: 124 23% 12%;
+    --secondary-foreground: 143 21% 93%;
+    --muted: 124 23% 12%;
+    --muted-foreground: 144 13% 48%;
+    --accent: 22 50% 57%;
+    --accent-foreground: 140 26% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 140 20% 13%;
+    --input: 140 20% 13%;
+    --ring: 144 33% 46%;
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 40 33% 96%;
+    --foreground: 141 25% 14%;
+    --card: 40 33% 96%;
+    --card-foreground: 141 25% 14%;
+    --popover: 40 33% 96%;
+    --popover-foreground: 141 25% 14%;
+    --primary: 144 33% 38%;
+    --primary-foreground: 40 33% 96%;
+    --secondary: 141 15% 90%;
+    --secondary-foreground: 141 25% 14%;
+    --muted: 141 15% 90%;
+    --muted-foreground: 141 15% 45%;
+    --accent: 22 50% 50%;
+    --accent-foreground: 40 33% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 141 15% 85%;
+    --input: 141 15% 85%;
+    --ring: 144 33% 38%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-secondary), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-primary), serif;
+  }
+  .font-code {
+    font-family: var(--font-code), monospace;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
