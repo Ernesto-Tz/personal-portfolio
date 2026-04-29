@@ -4,8 +4,6 @@ A modern, fully-featured portfolio website showcasing frontend development work,
 
 **View live:** [ernesto-tzompantzi.com](https://ernesto-tzompantzi.com)
 
-![Magic Portfolio](https://ernesto-tzompantzi.com/images/og/home.jpg)
-
 ## Stack
 
 - **Framework:** Next.js 15 (App Router)
