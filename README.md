@@ -1,18 +1,44 @@
-# **Magic Portfolio**
+# Ernesto Tzompantzi's Portfolio
 
-View the [demo here](https://ernesto-tzompantzi.com).
+A modern, fully-featured portfolio website showcasing frontend development work, projects, and insights.
+
+**View live:** [ernesto-tzompantzi.com](https://ernesto-tzompantzi.com)
 
 ![Magic Portfolio](https://ernesto-tzompantzi.com/images/og/home.jpg)
 
+## Stack
 
-# **Getting started**
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Components:** ShadCN/ui
+- **CMS:** Sanity (headless content management)
+- **Runtime:** Node.js 18.17+, pnpm
+- **Deployment:** Vercel
 
-Magic Portfolio is a modern portfolio website built with [Next.js](https://nextjs.org), [React](https://react.dev), [TypeScript](https://www.typescriptlang.org), [Tailwind CSS](https://tailwindcss.com), and [Sanity CMS](https://www.sanity.io). It requires Node.js v18.17+ and uses pnpm as the package manager.
+## Features
+
+- **Dynamic Content Management** — All projects, blog posts, and gallery images managed through Sanity Studio
+- **SEO Optimized** — Automatic Open Graph image generation, schema markup, and dynamic sitemaps
+- **Dark/Light Theme** — Built-in theme switcher with persistent preferences
+- **Responsive Design** — Optimized for mobile, tablet, and desktop
+- **Password-Protected Routes** — Optional protection for sensitive project details
+- **Analytics** — Vercel Analytics integration for traffic insights
+- **Type Safe** — Full TypeScript support with strict configuration
+- **Performance Focused** — Fast load times, optimized images, smart code splitting
+
+## Getting Started
+
+### Prerequisites
+- Node.js v18.17 or higher
+- pnpm (recommended) or npm/yarn
+
+### Installation
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/Ernesto-Tz/magic-portfolio.git
-cd magic-portfolio
+git clone https://github.com/Ernesto-Tz/personal-portfolio.git
+cd personal-portfolio
 ```
 
 **2. Install dependencies**
@@ -20,84 +46,84 @@ cd magic-portfolio
 pnpm install
 ```
 
-**3. Set up environment variables**
+**3. Configure environment variables**
 
-Create a `.env.local` file with your Sanity CMS credentials:
-```
+Create a `.env.local` file with your Sanity credentials:
+```env
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
-NEXT_PUBLIC_SANITY_DATASET=your_dataset
+NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+SANITY_API_TOKEN=your_api_token
+SANITY_REVALIDATE_SECRET=your_secret_key
 ```
 
-**4. Run dev server**
+Get your Sanity credentials from [sanity.io](https://www.sanity.io)
+
+**4. Start the development server**
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view your portfolio.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-**5. Edit content**
+## Project Structure
 
-Configure your portfolio in `src/app/resources/config.js` and manage content through the Sanity Studio at `/studio`.
+```
+src/
+├── app/
+│   ├── about/         # About page
+│   ├── work/          # Project showcase
+│   ├── sports/        # Blog/posts section
+│   ├── gallery/       # Gallery page
+│   ├── api/           # API routes
+│   └── resources/     # Configuration
+├── components/        # Reusable React components
+├── sanity/           # Sanity schema definitions
+└── lib/              # Utility functions
+```
 
-# **Features**
+## Customization
 
-## **Built with Modern Stack**
-- Next.js 15 with App Router
-- React 19
-- TypeScript for type safety
-- Tailwind CSS v4 for styling
-- ShadCN/ui components
-- Sanity CMS for content management
-
-## **SEO & Analytics**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation
-- Vercel Analytics integration
-- Dynamic sitemap generation
-
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Dark/Light theme switcher
-- Smooth animations with Framer Motion
-- Custom font stack: Fraunces, Instrument Sans, JetBrains Mono
-
-## **Content Management**
-- Sanity Studio integration for easy content editing
-- Support for projects, sports/blog posts, gallery, and about page
-- Social links management
-- Password-protected routes for sensitive content
-
-## **Developer Experience**
-- Type-safe TypeScript configuration
-- ESLint and Biome for code quality
-- Structured folder organization
-- Easy customization through config files
-
-# **Customization**
-
-### Colors & Theme
-Edit the CSS variables in `src/app/globals.css` to customize the color scheme.
-
-### Content
-- Edit the Sanity schema files in `src/sanity/schemaTypes/`
-- Access Sanity Studio at `/studio` to manage your content
-
-### Configuration
-Update `src/app/resources/config.js` for:
-- Site metadata
-- Font families
-- Display options
+### Site Configuration
+Edit `src/app/resources/config.js` to customize:
+- Site title and description
 - Navigation labels
+- Timezone and location display
+- Font stack
+- Theme options
 
-# **Deployment**
+### Design & Styling
+- **Colors:** CSS variables in `src/app/globals.css`
+- **Typography:** Font imports in `src/app/resources/config.js`
+- **Components:** ShadCN/ui components in `src/components/ui/`
 
-This portfolio is optimized for deployment on [Vercel](https://vercel.com). Simply connect your GitHub repository to Vercel and your portfolio will be automatically deployed on every push to the main branch.
+### Content Management
+1. Access Sanity Studio at `/studio` (when running locally)
+2. Manage projects, posts, and gallery images
+3. Edit schema types in `src/sanity/schemaTypes/`
 
-## **Deploy with Vercel**
+## Deployment
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FErnesto-Tz%2Fmagic-portfolio)
+This portfolio is optimized for [Vercel](https://vercel.com):
 
-# **License**
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy — automatically triggered on every push to `main`
 
-MIT License - feel free to use this as a template for your own portfolio.
+## Scripts
+
+```bash
+pnpm dev          # Start development server
+pnpm build        # Build for production
+pnpm start        # Run production build
+pnpm lint         # Run ESLint
+pnpm type-check   # Run TypeScript type checking
+```
+
+## License
+
+CC BY-NC 4.0 — Attribution required for non-commercial use. For commercial use, please contact.
+
+---
+
+Built with care. Feel free to use this as inspiration for your own portfolio.
