@@ -114,13 +114,21 @@ export default async function About() {
       <div className="flex flex-col sm:flex-row justify-center gap-8">
         {/* Sticky avatar column */}
         <div className="sm:sticky sm:top-20 flex flex-col items-center gap-3 min-w-[160px] px-4 pb-8 self-start">
-          <Avatar className="w-24 h-24">
-            <AvatarImage src={avatarUrl} alt={person.name} />
-            <AvatarFallback>{person.firstName[0]}</AvatarFallback>
-          </Avatar>
-          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <Globe className="h-3.5 w-3.5" />
-            {person.location}
+          <div className="relative">
+            <Avatar className="w-28 h-28 border-2 border-blue-600 shadow-lg" style={{ borderColor: "#005B96" }}>
+              <AvatarImage src={avatarUrl} alt={person.name} />
+              <AvatarFallback>{person.firstName[0]}</AvatarFallback>
+            </Avatar>
+            <div
+              className="absolute inset-0 rounded-full pointer-events-none"
+              style={{
+                boxShadow: "0 0 20px rgba(255, 131, 3, 0.3)",
+              }}
+            />
+          </div>
+          <div className="flex items-center gap-2 text-sm font-medium" style={{ color: "#005B96" }}>
+            <Globe className="h-4 w-4" />
+            <span>{person.location}</span>
           </div>
           {person.languages.length > 0 && (
             <div className="flex flex-wrap gap-1.5 justify-center">
