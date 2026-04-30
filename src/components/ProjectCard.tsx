@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="flex flex-col sm:flex-row gap-6 px-2 py-2">
         {title && (
           <div className="flex-[5]">
-            <h2 className="text-2xl font-bold text-balance font-primary leading-tight transition-colors duration-300 [&:hover]:!text-white" style={{ color: "#005B96" }}>
+            <h2 className="text-2xl font-bold text-balance font-primary leading-tight" style={{ color: "#005B96" }}>
               {title}
             </h2>
           </div>
