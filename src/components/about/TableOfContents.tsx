@@ -54,7 +54,7 @@ export default function TableOfContents({ structure, about }: TableOfContentsPro
             <a
               href={`#${item.title}`}
               className={cn(
-                "text-xs transition-colors hover:text-foreground",
+                "text-xs transition-colors [&:hover]:!text-[#FF8303]",
                 active === item.title ? "text-foreground font-medium" : "text-muted-foreground"
               )}
             >
@@ -66,7 +66,7 @@ export default function TableOfContents({ structure, about }: TableOfContentsPro
                   key={sub}
                   href={`#${sub}`}
                   className={cn(
-                    "text-xs pl-3 transition-colors hover:text-foreground",
+                    "text-xs pl-3 transition-colors [&:hover]:!text-[#FF8303]",
                     active === sub ? "text-foreground" : "text-muted-foreground"
                   )}
                 >
