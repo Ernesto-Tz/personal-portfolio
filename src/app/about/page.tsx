@@ -42,13 +42,18 @@ export const metadata: Metadata = {
 function SectionDivider({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex items-center gap-3 mb-6">
-      <span className="font-code text-[0.65rem] tracking-[0.25em] text-primary/70 whitespace-nowrap">
+      <span className="font-code text-[0.7rem] font-bold tracking-[0.25em] whitespace-nowrap" style={{ color: "#FF8303" }}>
         {number}
       </span>
-      <span className="font-code text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground/50 whitespace-nowrap">
+      <span className="font-code text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground/60 whitespace-nowrap font-medium">
         {label}
       </span>
-      <div className="flex-1 h-px bg-border" />
+      <div
+        className="flex-1 h-0.5"
+        style={{
+          background: "linear-gradient(to right, #FF8303, #FF8303 30%, transparent 100%)",
+        }}
+      />
     </div>
   );
 }
@@ -143,7 +148,7 @@ export default async function About() {
           {/* Hero */}
           <div id="Introduction" className="min-h-[160px] flex flex-col justify-center mb-8">
             <h1 className="text-4xl font-bold font-primary">{person.name}</h1>
-            <p className="text-lg text-primary/70 mt-1">{person.role}</p>
+            <p className="text-lg font-code tracking-[0.15em] mt-1 uppercase text-sm font-medium" style={{ color: "#FF8303" }}>{person.role}</p>
             {socialLinks.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-5">
                 {socialLinks.map((item) => {
@@ -151,13 +156,13 @@ export default async function About() {
                   const Icon = iconMap[item.icon] ?? Mail;
                   return (
                     <React.Fragment key={item.name}>
-                      <Button asChild variant="outline" size="sm" className="hidden sm:flex gap-1.5 text-xs">
+                      <Button asChild variant="secondary" size="sm" className="hidden sm:flex gap-1.5 text-xs">
                         <Link href={item.link} target="_blank" rel="noopener noreferrer">
                           <Icon className="h-3.5 w-3.5" />
                           {item.name}
                         </Link>
                       </Button>
-                      <Button asChild variant="outline" size="icon" className="sm:hidden w-8 h-8">
+                      <Button asChild variant="secondary" size="icon" className="sm:hidden w-8 h-8">
                         <Link href={item.link} target="_blank" rel="noopener noreferrer" aria-label={item.name}>
                           <Icon className="h-4 w-4" />
                         </Link>
@@ -180,7 +185,7 @@ export default async function About() {
           {/* Work Experience */}
           <>
             <SectionDivider number="02" label="Work Experience" />
-            <h2 id="Work Experience" className="text-2xl font-bold font-primary mb-4">
+            <h2 id="Work Experience" className="text-2xl font-bold font-primary mb-4" style={{ color: "#005B96" }}>
               Work Experience
             </h2>
             <div className="flex flex-col gap-8 mb-10">
@@ -192,7 +197,7 @@ export default async function About() {
                     </span>
                     <span className="text-xs text-muted-foreground">{exp.timeframe}</span>
                   </div>
-                  <span className="text-sm text-primary/70 mb-3">{exp.company}</span>
+                  <span className="text-sm font-medium mb-3" style={{ color: "#FF8303" }}>{exp.company}</span>
                   <div className="text-sm text-foreground/80 leading-relaxed flex flex-col gap-3">
                     <PortableText value={exp.achievements} />
                   </div>
@@ -215,7 +220,7 @@ export default async function About() {
                   </span>
                   <span className="text-xs text-muted-foreground">SEP 2017 - DIC 2021</span>
                 </div>
-                <span className="text-sm text-primary/70">Obuda University, Hungary</span>
+                <span className="text-sm font-medium" style={{ color: "#FF8303" }}>Obuda University, Hungary</span>
               </div>
             </div>
           </>
@@ -233,7 +238,7 @@ export default async function About() {
                   href={skill.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-secondary transition-colors"
+                  className="flex flex-col items-center gap-2 p-4 rounded-xl border border-transparent transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20"
                   title={skill.title}
                 >
                   <Image
