@@ -111,16 +111,6 @@ export default async function About() {
         }}
       />
 
-      {/* Fixed ToC sidebar */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 pl-6 gap-8 hidden lg:flex flex-col">
-        <TableOfContents
-          structure={structure}
-          about={{
-            tableOfContent: { display: true, subItems: false },
-          }}
-        />
-      </div>
-
       <div className="flex flex-col sm:flex-row justify-center gap-8">
         {/* Sticky avatar column */}
         <div className="sm:sticky sm:top-20 flex flex-col items-center gap-3 min-w-[160px] px-4 pb-8 self-start">
@@ -141,13 +131,21 @@ export default async function About() {
               ))}
             </div>
           )}
+          <div className="mt-6 pt-6 border-t border-border">
+            <TableOfContents
+              structure={structure}
+              about={{
+                tableOfContent: { display: true, subItems: false },
+              }}
+            />
+          </div>
         </div>
 
         {/* Main content */}
         <div className="flex-[9] max-w-[640px] flex flex-col">
           {/* Hero */}
           <div id="Introduction" className="min-h-[160px] flex flex-col justify-center mb-8">
-            <h1 className="text-4xl font-bold font-primary">{person.name}</h1>
+            <h1 className="text-4xl font-bold font-primary" style={{ color: "#005B96" }}>{person.name}</h1>
             <p className="text-lg font-code tracking-[0.15em] mt-1 uppercase text-sm font-medium" style={{ color: "#FF8303" }}>{person.role}</p>
             {socialLinks.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-5">
@@ -192,12 +190,12 @@ export default async function About() {
               {workExperiences.map((exp) => (
                 <div key={exp._id} className="flex flex-col">
                   <div className="flex justify-between items-end mb-1 flex-wrap gap-1">
-                    <span id={exp.company} className="text-base font-semibold">
+                    <span id={exp.company} className="text-base font-semibold" style={{ color: "#FF8303" }}>
                       {exp.role}
                     </span>
                     <span className="text-xs text-muted-foreground">{exp.timeframe}</span>
                   </div>
-                  <span className="text-sm font-medium mb-3" style={{ color: "#FF8303" }}>{exp.company}</span>
+                  <span className="text-sm font-semibold text-primary/70 mb-3">{exp.company}</span>
                   <div className="text-sm text-foreground/80 leading-relaxed flex flex-col gap-3">
                     <PortableText value={exp.achievements} />
                   </div>
@@ -215,12 +213,12 @@ export default async function About() {
             <div className="flex flex-col gap-6 mb-10">
               <div className="flex flex-col gap-1">
                 <div className="flex justify-between items-end flex-wrap gap-1">
-                  <span id="Obuda University, Hungary" className="text-base font-semibold">
+                  <span id="Obuda University, Hungary" className="text-base font-semibold" style={{ color: "#FF8303" }}>
                     Bachelor of Computer Science Engineering
                   </span>
                   <span className="text-xs text-muted-foreground">SEP 2017 - DIC 2021</span>
                 </div>
-                <span className="text-sm font-medium" style={{ color: "#FF8303" }}>Obuda University, Hungary</span>
+                <span className="text-sm font-semibold text-primary/70">Obuda University, Hungary</span>
               </div>
             </div>
           </>
