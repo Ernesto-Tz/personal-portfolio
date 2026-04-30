@@ -6,3 +6,7 @@ export { Reveal } from "@/components/Reveal";
 export { Background } from "@/components/Background";
 export { JsonLd } from "@/components/JsonLd";
 export { SkillsMarquee } from "@/components/SkillsMarquee";
+export { AnimatedText } from "@/components/AnimatedText";
+export { ParallaxSection } from "@/components/ParallaxSection";
+export { StaggerContainer } from "@/components/StaggerContainer";
+export { AccentText } from "@/components/AccentText";

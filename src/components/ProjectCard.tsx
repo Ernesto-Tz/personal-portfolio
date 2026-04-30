@@ -30,12 +30,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className="w-full flex flex-col gap-4">
       {images[0] && (
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border">
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border group/image transition-all duration-300 motion-safe:hover:ring-2 motion-safe:hover:ring-accent/50 motion-safe:hover:shadow-lg motion-safe:hover:shadow-accent/20">
           <Image
             src={images[0]}
             alt={title}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-300 motion-safe:group-hover/image:scale-110"
             sizes="(max-width: 960px) 100vw, 960px"
             priority={priority}
           />
@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="flex flex-col sm:flex-row gap-6 px-2 py-2">
         {title && (
           <div className="flex-[5]">
-            <h2 className="text-2xl font-bold text-balance font-primary leading-tight">
+            <h2 className="text-2xl font-bold text-balance font-primary leading-tight transition-colors duration-300 motion-safe:group-hover:text-accent">
               {title}
             </h2>
           </div>
@@ -84,10 +84,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-all duration-200 motion-safe:hover:scale-105 motion-safe:hover:gap-2"
                 >
                   Check the live project
-                  <ExternalLink className="h-3.5 w-3.5" />
+                  <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 motion-safe:group-hover/image:translate-x-1" />
                 </Link>
               )}
             </div>

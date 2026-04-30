@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Reveal } from "@/components/Reveal";
+import { AnimatedText } from "@/components/AnimatedText";
+import { AccentText } from "@/components/AccentText";
+import { AnimatedFirstName } from "@/components/AnimatedFirstName";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
@@ -33,16 +36,21 @@ export const metadata: Metadata = {
 
 function SectionMarker({ number, label }: { number: string; label?: string }) {
   return (
-    <div className="flex items-center gap-3 mb-2">
-      <span className="font-code text-[0.65rem] tracking-[0.25em] text-primary whitespace-nowrap">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="font-code text-[0.7rem] font-bold tracking-[0.25em] whitespace-nowrap" style={{ color: "#FF8303" }}>
         {number}
       </span>
       {label && (
-        <span className="font-code text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground/40 whitespace-nowrap">
+        <span className="font-code text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground/60 whitespace-nowrap font-medium">
           {label}
         </span>
       )}
-      <div className="flex-1 h-px bg-border" />
+      <div
+        className="flex-1 h-0.5"
+        style={{
+          background: "linear-gradient(to right, #FF8303, #FF8303 30%, transparent 100%)",
+        }}
+      />
     </div>
   );
 }
@@ -111,22 +119,20 @@ export default async function Home() {
         <SectionMarker number="01" label="Introduction" />
 
         <Reveal translateY={4}>
-          <p className="font-code text-[0.58rem] tracking-[0.22em] uppercase text-accent mb-3">
+          <p className="font-code text-[0.58rem] tracking-[0.22em] uppercase text-accent mb-4">
             {person.role}
           </p>
-          <h1
-            className="text-5xl sm:text-6xl tracking-[-0.025em] text-balance font-primary"
-            style={{ lineHeight: "1.0" }}
-          >
-            <span style={{ fontWeight: 700 }}>Hello, I&apos;m </span>
-            <em style={{ fontStyle: "italic", fontWeight: 300, color: "hsl(var(--primary))" }}>
-              {person.firstName}
-            </em>
-          </h1>
         </Reveal>
 
+        <div className="text-display-sm md:text-display-md text-balance">
+          <AnimatedText staggerChildren>
+            Hello, I&apos;m
+          </AnimatedText>
+          <AnimatedFirstName firstName={person.firstName} delay={0.3} />
+        </div>
+
         <Reveal translateY={8} delay={0.2}>
-          <p className="text-base text-muted-foreground max-w-[48ch] leading-relaxed text-balance">
+          <p className="text-lg text-muted-foreground max-w-[48ch] leading-relaxed text-balance">
             {pageSettings.subline}
           </p>
         </Reveal>
@@ -158,21 +164,27 @@ export default async function Home() {
           <Reveal delay={0.5}>
             <Link
               href={`/work/${pageSettings.featuredProject.slug}`}
-              className="flex items-center gap-3 w-full bg-card border border-border rounded-md px-4 py-3 hover:bg-secondary transition-colors group"
-              style={{ borderLeftWidth: "2px", borderLeftColor: "hsl(var(--accent))" }}
+              className="flex items-center gap-3 w-full bg-card border border-border rounded-lg px-5 py-4 transition-all duration-300 group motion-safe:hover:-translate-y-1"
+              style={{
+                borderLeftWidth: "2px",
+                borderLeftColor: "#FFAF42",
+              }}
             >
               <span
-                className="w-2 h-2 rounded-full flex-shrink-0"
+                className="w-2.5 h-2.5 rounded-full flex-shrink-0 animate-pulse"
                 style={{
-                  background: "hsl(var(--accent))",
-                  boxShadow: "0 0 6px hsl(var(--accent) / 0.6)",
+                  background: "#FFAF42",
+                  boxShadow: "0 0 12px rgba(255, 175, 66, 0.8)",
                 }}
               />
-              <span className="font-code text-[0.55rem] tracking-[0.08em] text-muted-foreground">
+              <span className="font-code text-[0.6rem] tracking-[0.1em] text-muted-foreground uppercase font-medium">
                 {pageSettings.featuredLabel}{" "}
-                <strong className="ml-4">{pageSettings.featuredProject.title}</strong>
+                <strong className="ml-3 font-bold" style={{ color: "#FFAF42" }}>{pageSettings.featuredProject.title}</strong>
               </span>
-              <span className="ml-auto text-muted-foreground/40 group-hover:text-muted-foreground transition-colors text-xs">
+              <span
+                className="ml-auto transition-all duration-300 text-sm font-bold motion-safe:group-hover:translate-x-1"
+                style={{ color: "#FFAF42" }}
+              >
                 →
               </span>
             </Link>

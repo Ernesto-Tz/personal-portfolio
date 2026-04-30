@@ -1,50 +1,57 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 140 26% 7%;
-    --foreground: 143 21% 93%;
-    --card: 148 25% 9%;
-    --card-foreground: 143 21% 93%;
-    --popover: 140 26% 7%;
-    --popover-foreground: 143 21% 93%;
-    --primary: 144 33% 46%;
-    --primary-foreground: 140 26% 7%;
-    --secondary: 124 23% 12%;
-    --secondary-foreground: 143 21% 93%;
-    --muted: 124 23% 12%;
-    --muted-foreground: 144 13% 48%;
-    --accent: 22 50% 57%;
-    --accent-foreground: 140 26% 7%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 140 20% 13%;
-    --input: 140 20% 13%;
-    --ring: 144 33% 46%;
+    /* Dark mode (default) - Arcade Energy: Red + Blue + Green */
+    --background: 240 16% 8%;
+    --foreground: 210 40% 98%;
+    --card: 240 20% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 240 16% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 0 90% 51%;
+    --primary-foreground: 240 16% 8%;
+    --secondary: 217 100% 50%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 15% 20%;
+    --muted-foreground: 210 15% 58%;
+    --accent: 142 71% 45%;
+    --accent-foreground: 240 16% 8%;
+    --success: 142 71% 45%;
+    --success-foreground: 240 16% 8%;
+    --destructive: 0 90% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 15% 15%;
+    --input: 240 15% 15%;
+    --ring: 0 90% 51%;
     --radius: 0.5rem;
   }
 
   .light {
-    --background: 40 33% 96%;
-    --foreground: 141 25% 14%;
-    --card: 40 33% 96%;
-    --card-foreground: 141 25% 14%;
-    --popover: 40 33% 96%;
-    --popover-foreground: 141 25% 14%;
-    --primary: 144 33% 38%;
-    --primary-foreground: 40 33% 96%;
-    --secondary: 141 15% 90%;
-    --secondary-foreground: 141 25% 14%;
-    --muted: 141 15% 90%;
-    --muted-foreground: 141 15% 45%;
-    --accent: 22 50% 50%;
-    --accent-foreground: 40 33% 96%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 141 15% 85%;
-    --input: 141 15% 85%;
-    --ring: 144 33% 38%;
+    /* Light mode - Arcade Energy vibrant & high contrast */
+    --background: 0 0% 98%;
+    --foreground: 240 16% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 16% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 16% 10%;
+    --primary: 0 90% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 15% 85%;
+    --muted-foreground: 240 15% 40%;
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --destructive: 0 90% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 15% 90%;
+    --input: 240 15% 90%;
+    --ring: 0 90% 51%;
   }
 }
 
@@ -55,22 +62,172 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-secondary), sans-serif;
+    font-family: "Barlow", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer utilities {
+  .font-display {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
   .font-primary {
-    font-family: var(--font-primary), serif;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
   }
   .font-code {
-    font-family: var(--font-code), monospace;
+    font-family: "Fira Code", monospace;
+  }
+
+  /* Typography Scale - Sports Energy */
+  .text-display-lg {
+    font-size: 56px;
+    line-height: 1;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  .text-display-md {
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  .text-display-sm {
+    font-size: 42px;
+    line-height: 1.1;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    .text-display-lg {
+      font-size: 64px;
+    }
+    .text-display-md {
+      font-size: 56px;
+    }
+    .text-display-sm {
+      font-size: 48px;
+    }
+  }
+
+  .text-heading-xl {
+    font-size: 36px;
+    line-height: 1.25;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  .text-heading-lg {
+    font-size: 32px;
+    line-height: 1.25;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  .text-heading-md {
+    font-size: 28px;
+    line-height: 1.25;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  .text-heading-sm {
+    font-size: 24px;
+    line-height: 1.25;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(to right, hsl(var(--accent)), hsl(var(--primary)), hsl(var(--secondary)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Accent Border for emphasis */
+  .accent-border-left {
+    border-left-width: 2px;
+    border-left-color: hsl(var(--accent));
+    padding-left: 1rem;
+  }
+
+  .accent-border-bottom {
+    border-bottom-width: 2px;
+    border-bottom-color: hsl(var(--accent));
+    padding-bottom: 0.5rem;
+  }
+
+  /* Bold accent text utility */
+  .text-accent-bold {
+    color: hsl(var(--accent));
+    font-weight: 700;
+    font-family: "Barlow Condensed", sans-serif;
   }
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+@keyframes pulse-accent {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7); }
+  50% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0); }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @keyframes fade-in-view {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
