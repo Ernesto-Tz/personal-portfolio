@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="flex flex-col sm:flex-row gap-6 px-2 py-2">
         {title && (
           <div className="flex-[5]">
-            <h2 className="text-2xl font-bold text-balance font-primary leading-tight transition-colors duration-300 motion-safe:group-hover:text-accent">
+            <h2 className="text-2xl font-bold text-balance font-primary leading-tight transition-colors duration-300 [&:hover]:!text-white" style={{ color: "#005B96" }}>
               {title}
             </h2>
           </div>
@@ -84,10 +84,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-all duration-200 motion-safe:hover:scale-105 motion-safe:hover:gap-2"
+                  className="flex items-center gap-1.5 text-sm text-muted-foreground transition-all duration-200 hover:scale-105 hover:gap-2 [&:hover]:!text-[#FF8303]"
                 >
                   Check the live project
-                  <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 motion-safe:group-hover/image:translate-x-1" />
+                  <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 hover:translate-x-1" />
                 </Link>
               )}
             </div>

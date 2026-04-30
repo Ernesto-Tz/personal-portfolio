@@ -148,7 +148,7 @@ export default async function Home() {
                 {pageSettings.contactCtaTitle}
               </Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full gap-2">
+            <Button asChild variant="secondary" className="rounded-full gap-2">
               <Link href="/about">
                 <Avatar className="w-5 h-5 -ml-1">
                   <AvatarImage src={avatarUrl} alt={person.name} />

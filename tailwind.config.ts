@@ -30,6 +30,8 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        "accent-blue": "#005B96",
+        "accent-orange": "#FF8303",
       },
       borderRadius: {
         lg: "var(--radius)",
